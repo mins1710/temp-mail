@@ -7,7 +7,6 @@ router.get("/test", (req,res) => {
 })
 router.post("/read", async (req,res) => {
     const options = req.body;
-    console.log(options);
     const messages = await gmailTester.get_messages( path.resolve(__dirname, "../credentials.json"),path.resolve(__dirname, "../token.json"),options);
     return res.send(messages);
 });
